@@ -18,7 +18,13 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.launcher3">
 
+    <PreferenceCategory
+        android:key="general_category"
+	android:layout="@layout/pref_cat"
+        android:title="@string/general_title">
+
     <com.android.launcher3.settings.preference.ReloadingListPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_icon_pack"
         android:title="@string/app_info_icon_pack"
         android:summary="@string/placeholder_string"
@@ -33,6 +39,7 @@
         settings:min="80"
         settings:units="%"
         settings:interval="5"
+        settings:iconSpaceReserved="false" 
         android:defaultValue="100" />
 
     <com.android.launcher3.settings.preferences.CustomSeekBarPreference
@@ -43,9 +50,11 @@
        settings:min="80"
        settings:units="%"
        settings:interval="5"
+       settings:iconSpaceReserved="false" 
        android:defaultValue="100" />
 
     <com.android.launcher3.settings.NotificationDotsPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_icon_badging"
         android:title="@string/notification_dots_title"
         android:persistent="false"
@@ -59,10 +68,27 @@
     </com.android.launcher3.settings.NotificationDotsPreference>
 
     <Preference
+        settings:iconSpaceReserved="false" 
         android:key="pref_trust_apps"
         android:title="@string/trust_apps_manager_name" />
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
+        android:key="pref_dt_gesture"
+        android:title="@string/pref_dt_gesture_title"
+        android:summary="@string/pref_dt_gesture_summary"
+        android:defaultValue="true"
+        android:persistent="true"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory  
+        android:key="home_category"
+        android:layout="@layout/pref_cat"
+        android:title="@string/home_title">
+
+    <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:defaultValue="true"
         android:key="pref_workspace_edit"
         android:persistent="true"
@@ -71,6 +97,7 @@
         android:summaryOff="@string/settings_edit_allow_summary_off" />
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_add_icon_to_home"
         android:title="@string/auto_add_shortcuts_label"
         android:summary="@string/auto_add_shortcuts_description"
@@ -78,6 +105,7 @@
         android:persistent="true" />
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_allowRotation"
         android:title="@string/allow_rotation_title"
         android:summary="@string/allow_rotation_desc"
@@ -85,12 +113,14 @@
         android:persistent="true" />
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:defaultValue="true"
         android:key="pref_enable_minus_one"
         android:summary="@string/pref_show_google_now_summary"
         android:title="@string/title_show_google_app"/>
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_show_workspace_grad"
         android:title="@string/workspace_gradient_title"
         android:summary="@string/workspace_gradient_summary"
@@ -98,6 +128,7 @@
         android:persistent="true"/>
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_show_hotseat_grad"
         android:title="@string/hotseat_gradient_title"
         android:summary="@string/hotseat_gradient_summary"
@@ -105,6 +136,7 @@
         android:persistent="true"/>
 
     <androidx.preference.PreferenceScreen
+        settings:iconSpaceReserved="false" 
         android:persistent="false"
         android:title="@string/suggestion_pref_screen_title"
         android:key="pref_suggestions"
@@ -112,28 +144,33 @@
         <intent android:action="android.settings.ACTION_CONTENT_SUGGESTIONS_SETTINGS" />
     </androidx.preference.PreferenceScreen>
 
-    <SwitchPreference
-        android:key="pref_dt_gesture"
-        android:title="@string/pref_dt_gesture_title"
-        android:summary="@string/pref_dt_gesture_summary"
-        android:defaultValue="true"
-        android:persistent="true"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory  
+        android:key="label_category"
+        android:layout="@layout/pref_cat"
+        android:title="@string/label_title">
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_desktop_show_labels"
         android:title="@string/desktop_show_labels"
         android:defaultValue="true"
         android:persistent="true" />
 
     <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_drawer_show_labels"
         android:title="@string/drawer_show_labels"
         android:defaultValue="true"
         android:persistent="true" />
 
-        <SwitchPreference
+    <SwitchPreference
+        settings:iconSpaceReserved="false" 
         android:key="pref_show_labels_landscape"
         android:title="@string/show_labels_landscape"
         android:defaultValue="false"
         android:persistent="true" />
+    </PreferenceCategory>
+
 </androidx.preference.PreferenceScreen>
